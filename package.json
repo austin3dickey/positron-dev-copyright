@@ -2,7 +2,7 @@
 	"name": "positron-dev-copyright",
 	"displayName": "Positron Copyright Header Formatter",
 	"description": "Automatically updates Posit copyright header year ranges on file save",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "positron-dev",
 	"engines": {
 		"vscode": "^1.85.0"
