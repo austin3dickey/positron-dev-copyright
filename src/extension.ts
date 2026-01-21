@@ -81,10 +81,12 @@ function getYearUpdateEdits(document: vscode.TextDocument): vscode.TextEdit[] {
 				? `${startYear}-${endYear}`
 				: `${startYear}`;
 
+			// Remove trailing \r for Windows CRLF line endings since
+			// document.lineAt().range excludes line ending characters
 			const newLine = line.replace(
 				`Copyright (C) ${oldYearPart} Posit Software, PBC.`,
 				`Copyright (C) ${newYearPart} Posit Software, PBC.`
-			);
+			).replace(/\r$/, '');
 
 			if (newLine !== line) {
 				const lineRange = document.lineAt(i).range;
